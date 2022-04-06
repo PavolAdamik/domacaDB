@@ -1,0 +1,1 @@
+select MENO from OS_UDAJE;
