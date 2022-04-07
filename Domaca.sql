@@ -52,10 +52,10 @@ select * from zam
                         where exists (select 'x' from zam p
                                         where v.id_zam = p.veduci)); -- toto su ti ktori su veduci.. exist lebo duplicity
                                             --vazobna je toto..
-                        
 select v.id_zam, v.meno, v.priezvisko from  zam v
  where exists (select 'x' from zam p
                 where v.id_zam = p.veduci);
+
                 
 --kolegovia na rovnakej urovni
 --ti ktori su u rovnakeho veduceho
@@ -64,11 +64,8 @@ select z.id_zam, z.meno, z.priezvisko, k.id_zam, k.meno, k.priezvisko from zam z
         --where z.id_zam != k.id_zam 
             order by (1);
         --ten co je sam tak nema kolegov
-  
-  -- vsetci veduci .. vsetci podriadeni
- 
- 
- --ku kazdemu zamestnancovi jeho priameho nadriadeneho
+
+ --ku kazdemu zamestnancovi jeho priameho nadriadeneho.. ked ku kazdemmu tak aj ku tomu co ho nema ? ci ?
  select z.id_zam, z.meno, z.priezvisko, n.id_zam, n.meno, n.priezvisko from  zam z left join zam n
  on (n.id_zam = z.veduci) 
     order by (z.id_zam);
