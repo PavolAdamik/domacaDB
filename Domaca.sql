@@ -55,7 +55,6 @@ select * from zam
 select v.id_zam, v.meno, v.priezvisko from  zam v
  where exists (select 'x' from zam p
                 where v.id_zam = p.veduci);
-
                 
 --kolegovia na rovnakej urovni
 --ti ktori su u rovnakeho veduceho
